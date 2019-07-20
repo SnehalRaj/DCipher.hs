@@ -1,0 +1,7 @@
+#!/bin/bash
+
+a=$(cat cipher.txt | sed -E 's/$/ /g' )
+b=$(echo $a | sed -E 's/\"/\\\"/g')
+c=$(echo $b | sed -E "s/'/\\\'/g" ) 
+d="\"$c\""
+echo $d>c.txt
